@@ -47,28 +47,7 @@ export default function TodaySlider() {
                             </h4>
                             <p>{formatTodayDate()}</p>
                         </div>
-                        <div className="today-slider__controls-wrapper">
-                            <button
-                                ref={prevRef}
-                                type="button"
-                                className="today-slider__control js-today-slider-prev"
-                                aria-label="Previous"
-                                onClick={() => swiper?.slidePrev()}
-                            >
-                                <ChevronLeft size={18} aria-hidden />
-                                Previous
-                            </button>
-                            <button
-                                ref={nextRef}
-                                type="button"
-                                className="today-slider__control next js-today-slider-next"
-                                aria-label="Next"
-                                onClick={() => swiper?.slideNext()}
-                            >
-                                Next
-                                <ChevronRight size={18} aria-hidden />
-                            </button>
-                        </div>
+                      
                     </div>
                 </div>
             </div>

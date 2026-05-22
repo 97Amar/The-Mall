@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mall Screening — The Mall
 
 A multi-page **static mall experience** built as a front-end screening project. The site presents a luxury lifestyle destination with themed sections for hospitality, entertainment, dining, children’s play, fashion, and events. All pages are client-rendered; there is no backend API.
@@ -141,3 +142,7 @@ Production build emits to `dist/` and is suitable for static hosting (Netlify, V
 ## License
 
 Private screening / assessment project (`"private": true` in `package.json`). Add license terms here if the repository is published.
+=======
+# The-Mall
+Luxury multi-page mall experience built with React, Vite, and TypeScript featuring immersive static UI sections.
+>>>>>>> 3def1da377bc1c2e6ddbe4f0012a1979cf523aad
