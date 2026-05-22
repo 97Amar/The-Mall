@@ -1,0 +1,148 @@
+@use '../../../assets/theme/variables' as *;
+
+// ── Leisure Grid Section ──
+.leisure-grid {
+    padding: 5rem 0;
+    background: $color-black;
+    overflow: hidden;
+
+    &__header {
+        padding: 0 1.5rem 4rem;
+    }
+
+    &__label {
+        font-size: $font-size-label;
+        text-transform: uppercase;
+        letter-spacing: $tracking-lg;
+        color: $color-white-50;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    &__heading {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $color-white;
+        line-height: 1;
+        font-style: italic;
+        letter-spacing: $tracking-tight;
+        font-size: clamp(1rem, 4vw, 3rem);
+    }
+
+    &__cards {
+        padding: 0 1.5rem;
+    }
+
+    // ── Card ──
+    &__card {
+        position: relative;
+        overflow: hidden;
+        border-radius: $radius-2xl;
+        height: 760px;
+        background: $color-dark;
+        transition: $transition-slow;
+    }
+
+    &__card-overlay {
+        position: absolute;
+        inset: 0;
+        background: $gradient-overlay-dark-full;
+        z-index: $z-overlay;
+    }
+
+    // ── Badge ──
+    &__badge-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem;
+        z-index: $z-top;
+    }
+
+    &__badge {
+        padding: 0.5rem 0.75rem;
+        border-radius: $radius-pill;
+        color: $color-white;
+        font-weight: 700;
+        font-size: $font-size-badge;
+        letter-spacing: $tracking-xs;
+        background: $color-white-12;
+        backdrop-filter: blur(12px);
+        border: 1px solid $color-white-15;
+    }
+
+    // ── Card Content ──
+    &__card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 2rem;
+        width: 100%;
+        z-index: $z-top;
+    }
+
+    &__card-category {
+        font-size: $font-size-badge;
+        letter-spacing: $tracking-md;
+        text-transform: uppercase;
+        color: $color-white-50;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+
+    &__card-title {
+        color: $color-white;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        font-size: 2.5rem;
+        line-height: 0.9;
+        font-style: italic;
+    }
+
+    &__card-tagline {
+        color: $color-white-50;
+        margin-bottom: 1.5rem;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    &__btn {
+        background: $color-white;
+        color: $color-black;
+        border: none;
+        border-radius: $radius-pill;
+        padding: 0.75rem 1.5rem;
+        font-size: $font-size-label;
+        letter-spacing: 0.2em;
+        font-weight: 700;
+        cursor: pointer;
+        transition: $transition-base;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    // ── Image ──
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $transition-image;
+    }
+
+    &__card:hover &__img {
+        transform: scale(1.08);
+    }
+
+    // ── Swiper Customization ──
+    .swiper-pagination-bullet {
+        background: $color-white-50;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: $color-white;
+    }
+}

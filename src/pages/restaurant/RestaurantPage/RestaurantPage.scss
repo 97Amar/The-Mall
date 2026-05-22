@@ -1,0 +1,32 @@
+@use '../theme' as *;
+
+.restaurant-page {
+    background: $restaurant-bg;
+    min-height: 100vh;
+    padding-top: 4.5rem;
+    color: $restaurant-cream;
+    padding-bottom: 5rem;
+
+    &__intro {
+        position: relative;
+    }
+
+    &__footer {
+        text-align: center;
+        padding: 2rem 1.5rem 1rem;
+    }
+
+    &__back {
+        display: inline-block;
+        font-size: $font-size-label;
+        font-weight: 700;
+        letter-spacing: $tracking-xs;
+        color: $restaurant-text-muted;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $restaurant-cream;
+        }
+    }
+}

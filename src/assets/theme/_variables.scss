@@ -1,0 +1,128 @@
+// ─────────────────────────────────────────────
+// THEME VARIABLES
+// ─────────────────────────────────────────────
+
+// ── Core Colors ──
+$color-white: #ffffff;
+$color-black: #000000;
+$color-dark: #111111;
+$color-zinc-50: #f9f9f9;
+$color-gray-900: #111827;
+$color-gray-800: #1f2937;
+$color-gray-700: #374151;
+$color-gray-400: #9ca3af;
+
+// ── Opacity Variants ──
+$color-white-10: rgba(255, 255, 255, 0.10);
+$color-white-12: rgba(255, 255, 255, 0.12);
+$color-white-15: rgba(255, 255, 255, 0.15);
+$color-white-20: rgba(255, 255, 255, 0.20);
+$color-white-25: rgba(255, 255, 255, 0.25);
+$color-white-50: rgba(255, 255, 255, 0.50);
+$color-white-75: rgba(255, 255, 255, 0.75);
+$color-white-80: rgba(255, 255, 255, 0.80);
+
+$color-black-05: rgba(0, 0, 0, 0.05);
+$color-black-08: rgba(0, 0, 0, 0.08);
+$color-black-20: rgba(0, 0, 0, 0.20);
+$color-black-25: rgba(0, 0, 0, 0.25);
+$color-black-30: rgba(0, 0, 0, 0.30);
+$color-black-40: rgba(0, 0, 0, 0.40);
+$color-black-50: rgba(0, 0, 0, 0.50);
+$color-black-60: rgba(0, 0, 0, 0.60);
+$color-black-70: rgba(0, 0, 0, 0.70);
+$color-black-80: rgba(0, 0, 0, 0.80);
+$color-black-88: rgba(0, 0, 0, 0.88);
+$color-black-95: rgba(0, 0, 0, 0.95);
+$color-black-97: rgba(0, 0, 0, 0.97);
+
+// ── Gradients ──
+$gradient-overlay-dark-bottom: linear-gradient(to top, $color-black-95, $color-black-25, $color-black-70);
+$gradient-overlay-dark-full: linear-gradient(to top, $color-black-97, $color-black-20, $color-black-05);
+$gradient-overlay-events: linear-gradient(to top, $color-black-95, $color-black-25, $color-black-70);
+$gradient-bottom-fade: linear-gradient(to top, $color-black, transparent);
+$gradient-overlay-light: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.4));
+$gradient-card-overlay: linear-gradient(to top, $color-black-97, $color-black-20, $color-black-05);
+$gradient-banner-bottom: linear-gradient(to top, $color-black-80, transparent);
+
+// ── Typography ──
+$font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+$font-serif: 'Playfair Display', serif;
+
+// ── Letter Spacing ──
+$tracking-xs: 0.25em;
+$tracking-sm: 0.3em;
+$tracking-md: 0.35em;
+$tracking-lg: 0.4em;
+$tracking-xl: 0.45em;
+$tracking-super: 0.6em;
+$tracking-tight: -0.05em;
+
+// ── Font Sizes ──
+$font-size-label: 11px;
+$font-size-badge: 10px;
+$font-size-xxs: 9px;
+$font-size-xs: 10px;
+$font-size-body: 1rem;
+$font-size-body-lg: 1.05rem;
+$font-size-body-xl: 1.1rem;
+
+// ── Spacing ──
+$btn-min-width: 240px;
+$btn-padding-y: 1rem; // py-4 equivalent
+$btn-padding-x: 2rem; // px-5 equivalent
+$section-pad-y: 5rem;
+
+// ── Radius ──
+$radius-pill: 9999px;
+$radius-xl: 1.25rem; // rounded-4
+$radius-2xl: 1.5rem; // rounded-5
+
+// ── Transitions ──
+$transition-base: all 0.3s ease;
+$transition-slow: all 0.6s ease;
+$transition-image: transform 1.4s ease;
+
+// ── Z-index ──
+$z-bg: 0;
+$z-overlay: 1;
+$z-content: 2;
+$z-top: 3;
+
+
+$color-gold: #d4af37;
+$color-gold-light: #f4d03f;
+$color-gold-dark: #b8860b;
+$color-gold-10: rgba(212, 175, 55, 0.1);
+
+// ── Buttons ──
+$btn-radius: $radius-pill;
+$btn-font-size: $font-size-label;
+$btn-letter-spacing: $tracking-xs;
+$btn-font-weight: 700;
+
+// Primary on dark/image backgrounds
+$btn-primary-bg: $color-white;
+$btn-primary-color: $color-black;
+$btn-primary-shadow: 0 10px 30px $color-black-25;
+
+// Primary on light backgrounds
+$btn-primary-dark-bg: $color-black;
+$btn-primary-dark-color: $color-white;
+$btn-primary-dark-hover-bg: $color-dark;
+$btn-primary-dark-shadow: 0 10px 30px $color-black-25;
+
+// Outline accent (gold)
+$btn-outline-border: $color-gold;
+$btn-outline-color: $color-gold;
+$btn-outline-hover-bg: $color-gold-10;
+
+// Ghost on dark backgrounds
+$btn-ghost-bg: $color-white-10;
+$btn-ghost-border: $color-white-25;
+$btn-ghost-color: $color-white;
+$btn-ghost-hover-bg: $color-white-20;
+
+// White outline on dark backgrounds (event cards)
+$btn-outline-light-border: $color-white;
+$btn-outline-light-color: $color-white;

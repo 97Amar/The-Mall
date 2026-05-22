@@ -1,0 +1,534 @@
+@use '../../assets/theme/variables' as *;
+
+$fashion-cream: #f7f4ef;
+$fashion-charcoal: #1c1c1c;
+$fashion-gold: #b8956b;
+$fashion-blush: #e8ddd4;
+
+.fashion-page {
+    background: $color-white;
+    min-height: 100vh;
+    padding-top: 4.5rem;
+    color: $fashion-charcoal;
+
+    &__body {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+    }
+
+    &__back {
+        display: inline-block;
+        font-size: $font-size-label;
+        font-weight: 700;
+        letter-spacing: $tracking-xs;
+        color: rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $color-black;
+        }
+    }
+}
+
+// ── Shared section typography ──
+.fashion-section {
+    padding: 3.5rem 0;
+
+    &__header {
+        text-align: center;
+        max-width: 40rem;
+        margin: 0 auto 2.5rem;
+    }
+
+    &__eyebrow {
+        font-size: $font-size-xs;
+        letter-spacing: $tracking-super;
+        text-transform: uppercase;
+        color: $fashion-gold;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title {
+        font-family: $font-serif;
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 400;
+        line-height: 1.15;
+        margin: 0;
+    }
+}
+
+// ── Hero ──
+.fashion-hero {
+    position: relative;
+    min-height: clamp(420px, 85vh, 720px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.15) 45%,
+            rgba(0, 0, 0, 0.05) 100%
+        );
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: $color-white;
+        padding: 3rem 1.5rem 4rem;
+        max-width: 42rem;
+    }
+
+    &__eyebrow {
+        font-size: $font-size-xs;
+        letter-spacing: $tracking-super;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        opacity: 0.9;
+    }
+
+    &__title {
+        font-family: $font-serif;
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+        font-weight: 400;
+        margin: 0 0 0.5rem;
+        line-height: 1.05;
+    }
+
+    &__subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.35rem);
+        margin: 0 0 1.75rem;
+        opacity: 0.92;
+    }
+}
+
+// ── Social action buttons (Instagram / Facebook only) ──
+.fashion-social-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    .common_btn {
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+// ── Product card (static — no store links) ──
+.fashion-product-card {
+    display: block;
+    color: inherit;
+
+    &__media {
+        position: relative;
+        aspect-ratio: 3 / 4;
+        overflow: hidden;
+        background: $fashion-cream;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    &:hover &__img {
+        transform: scale(1.04);
+    }
+
+    &__badge {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        background: $color-black;
+        color: $color-white;
+        font-size: $font-size-xxs;
+        letter-spacing: $tracking-sm;
+        text-transform: uppercase;
+        padding: 0.25rem 0.5rem;
+    }
+
+    &__meta {
+        padding: 0.85rem 0 0;
+    }
+
+    &__name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin: 0 0 0.25rem;
+    }
+
+    &__price {
+        margin: 0;
+        font-size: 0.9rem;
+        color: rgba(0, 0, 0, 0.55);
+    }
+}
+
+// ── New season grid ──
+.fashion-grid {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1100px) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+
+    &__item {
+        @media (min-width: 1100px) {
+            &:nth-child(1),
+            &:nth-child(2) {
+                grid-column: span 3;
+            }
+        }
+    }
+}
+
+// ── Shop inspo ──
+.fashion-inspo {
+    padding: 3.5rem 0;
+
+    &__header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__video-wrap {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        background: $color-black;
+    }
+
+    &__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__video-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.12);
+        pointer-events: none;
+    }
+
+    &__look {
+        position: relative;
+        aspect-ratio: 4 / 5;
+        max-height: 640px;
+        overflow: hidden;
+        background: $fashion-cream;
+
+        @media (min-width: 768px) {
+            aspect-ratio: 16 / 10;
+            max-height: 520px;
+        }
+    }
+
+    &__look-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__hotspot {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    &__hotspot-dot {
+        display: block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: $color-white;
+        border: 2px solid $color-black;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        transition: transform 0.2s ease;
+    }
+
+    &__hotspot--active &__hotspot-dot,
+    &__hotspot:hover &__hotspot-dot {
+        transform: scale(1.2);
+        background: $fashion-gold;
+        border-color: $color-white;
+    }
+
+    &__hotspot-card {
+        position: absolute;
+        left: 50%;
+        bottom: calc(100% + 10px);
+        transform: translateX(-50%);
+        background: $color-white;
+        color: $color-black;
+        padding: 0.5rem 0.75rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        white-space: nowrap;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+
+        strong {
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        em {
+            font-style: normal;
+            color: rgba(0, 0, 0, 0.55);
+        }
+    }
+}
+
+// ── Slider ──
+.fashion-slider {
+    &__swiper {
+        padding-bottom: 0.5rem;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: $fashion-charcoal;
+
+            &::after {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+// ── Brand story split ──
+.fashion-story {
+    display: grid;
+    gap: 2rem;
+    padding: 3.5rem 0;
+    align-items: center;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    &__media {
+        overflow: hidden;
+        background: $fashion-cream;
+    }
+
+    &__img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__collection {
+        font-size: $font-size-xs;
+        letter-spacing: $tracking-super;
+        text-transform: uppercase;
+        color: $fashion-gold;
+        margin-bottom: 0.5rem;
+    }
+
+    &__title {
+        font-family: $font-serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin: 0 0 0.25rem;
+        font-weight: 400;
+    }
+
+    &__subtitle {
+        font-family: $font-serif;
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-weight: 400;
+        margin: 0 0 1rem;
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    &__tag {
+        font-size: $font-size-label;
+        letter-spacing: $tracking-md;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__body {
+        line-height: 1.65;
+        color: rgba(0, 0, 0, 0.65);
+        margin-bottom: 1.5rem;
+    }
+}
+
+// ── Social gallery ──
+.fashion-gallery {
+    padding: 3.5rem 0;
+    background: $fashion-cream;
+    margin: 0 -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+    &__header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__hashtag {
+        font-family: $font-serif;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        margin: 0 0 0.35rem;
+        font-weight: 400;
+    }
+
+    &__handle {
+        margin: 0 0 1rem;
+        font-size: $font-size-label;
+        letter-spacing: $tracking-sm;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    &__social {
+        justify-content: center;
+    }
+
+    &__slide {
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: $fashion-blush;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// ── Partner brands ──
+.fashion-partner {
+    padding: 3.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+    &__intro {
+        max-width: 42rem;
+        margin-bottom: 2rem;
+    }
+
+    &__tagline {
+        font-size: $font-size-xs;
+        letter-spacing: $tracking-super;
+        text-transform: uppercase;
+        color: var(--partner-accent, $fashion-gold);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    &__name {
+        font-family: $font-serif;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        margin: 0 0 1rem;
+        font-weight: 400;
+    }
+
+    &__desc {
+        line-height: 1.6;
+        color: rgba(0, 0, 0, 0.65);
+        margin-bottom: 1.25rem;
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+    }
+}
+
+// ── Store locations ──
+.fashion-locations {
+    padding-bottom: 4rem;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+
+        @media (min-width: 576px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__card {
+        overflow: hidden;
+        background: $fashion-cream;
+    }
+
+    &__img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        padding: 0.85rem 1rem 1rem;
+        margin: 0;
+        line-height: 1.35;
+    }
+}

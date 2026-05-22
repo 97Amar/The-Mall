@@ -1,0 +1,476 @@
+@use '../../assets/theme/variables' as *;
+
+$play-teal: #00a8aa;
+$play-orange: #ff6b00;
+$play-blue: #0066cc;
+$play-pink: #e91e8c;
+$play-purple: #5c2d91;
+$play-green: #2d6a4f;
+$play-yellow: #ffd500;
+$nicku-blue: #0066cc;
+
+.kids-play {
+    background: $color-white;
+    min-height: 100vh;
+    padding-top: 4.5rem;
+}
+
+// ── hero-full-width (Nick reference) ──
+.hero-full-width {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &--tall {
+        min-height: clamp(320px, 50vh, 560px);
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    &__bg-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 40%,
+            rgba(255, 255, 255, 0.75) 88%,
+            $color-white 100%
+        );
+        pointer-events: none;
+    }
+}
+
+// ── today-slider (Nick reference) ──
+.today-slider {
+    position: relative;
+    z-index: 2;
+    margin-top: -3rem;
+    padding: 2rem 0 2.5rem;
+    background-color: $nicku-blue;
+    background-size: cover;
+    background-position: center;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    &__controls {
+        margin-bottom: 1.25rem;
+    }
+
+    &__controls-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    &__controls-content {
+        color: $color-white;
+
+        p {
+            margin: 0.25rem 0 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: $play-yellow;
+        line-height: 1.15;
+    }
+
+    &__controls-wrapper {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &__control {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.45rem 0.85rem;
+        border-radius: $radius-pill;
+        border: 2px solid $color-white;
+        background: transparent;
+        color: $color-white;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: $transition-base;
+
+        &:hover {
+            background: $color-white;
+            color: $nicku-blue;
+        }
+
+        &.next {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__slider-container {
+        padding: 0 1rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    &__slider {
+        overflow: visible;
+    }
+
+    &__slider-card-container {
+        height: auto;
+    }
+
+    &__slider-card {
+        display: block;
+        min-height: 200px;
+        padding: 1.35rem 1.25rem;
+        background: $color-white;
+        border-radius: $radius-xl;
+        box-shadow: 0 8px 24px $color-black-25;
+        text-decoration: none;
+        color: $color-black;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            color: $color-black;
+        }
+
+        p {
+            margin: 0.5rem 0 0.35rem;
+        }
+
+        strong {
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        &--appearance {
+            position: relative;
+            min-height: 220px;
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            color: $color-white;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+
+            p {
+                position: relative;
+                z-index: 2;
+                margin: 0;
+                padding-bottom: 0.25rem;
+            }
+
+            strong {
+                font-size: 1.1rem;
+            }
+
+            &:hover {
+                color: $color-white;
+            }
+        }
+    }
+
+    &__square-card .today-slider__slider-card--appearance {
+        aspect-ratio: 1;
+        max-width: 220px;
+    }
+
+    &__card-icon {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        margin-bottom: 0.5rem;
+    }
+
+    &__slider-card-cta {
+        margin-top: 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: $play-teal;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    &__bg-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 55%);
+        pointer-events: none;
+    }
+}
+
+// ── characters-carousel (Nick reference) ──
+.characters-carousel {
+    position: relative;
+    padding: 3rem 0 2.5rem;
+    background-color: $color-white;
+    background-size: 280px auto;
+
+    &__top-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 120px;
+        background: $color-white;
+        z-index: 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem 1.5rem;
+    }
+
+    &__title {
+        margin: 0;
+        text-align: center;
+        font-size: clamp(1.1rem, 3.5vw, 1.65rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: $color-black;
+        line-height: 1.25;
+    }
+
+    &__slider {
+        position: relative;
+        z-index: 1;
+        padding: 0 0.5rem;
+    }
+
+    &__slider-container {
+        padding: 0.5rem 0 1rem;
+    }
+
+    &__slide {
+        display: block;
+        text-decoration: none;
+    }
+
+    &__card {
+        aspect-ratio: 1;
+        max-width: 160px;
+        margin: 0 auto;
+        border-radius: 1rem;
+        background-size: contain;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        position: relative;
+        box-shadow: 0 6px 18px $color-black-20;
+        transition: transform 0.25s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &__character-name {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+}
+
+// ── Rides (kept from play zone) ──
+.kids-play__rides {
+    background: $play-orange;
+    padding: 3.5rem 0 4rem;
+}
+
+.kids-play__rides-header {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.kids-play__rides-title {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-black;
+    margin: 0 0 0.75rem;
+}
+
+.kids-play__rides-desc {
+    font-size: 1.05rem;
+    color: $color-black;
+    max-width: 42rem;
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+.kids-play__rides-cta {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $play-teal;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.kids-play__rides-track {
+    padding: 0 1rem;
+
+    .swiper-slide {
+        width: auto;
+        max-width: 280px;
+    }
+}
+
+// ── Reusable play ride card ──
+.play-ride-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem 0.75rem 0 0;
+    overflow: hidden;
+    background: $color-white;
+    box-shadow: 0 8px 24px $color-black-25;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease;
+    width: 280px;
+
+    &:hover {
+        transform: translateY(-6px);
+        color: inherit;
+    }
+
+    &__img-wrap {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        background: $color-zinc-50;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__tag {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: $play-pink;
+        color: $color-white;
+        font-size: 0.65rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 0.35rem 0.65rem;
+    }
+
+    &__footer {
+        padding: 1rem 1.1rem;
+        color: $color-white;
+
+        &--purple {
+            background: $play-purple;
+        }
+
+        &--green {
+            background: $play-green;
+        }
+
+        &--dark {
+            background: $color-gray-900;
+        }
+    }
+
+    &__name {
+        font-size: 1.05rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin: 0 0 0.25rem;
+        line-height: 1.2;
+    }
+
+    &__status {
+        font-size: 0.8rem;
+        margin: 0;
+    }
+}
+
+// ── CTA banner ──
+.kids-play__cta-section {
+    margin: 0 1rem 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.35rem;
+    border-radius: $radius-xl;
+    background-color: $nicku-blue;
+    background-size: cover;
+}
+
+.kids-play__cta-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    color: $color-white;
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 1.35rem 1.5rem;
+    border: none;
+    border-radius: calc(#{$radius-xl} - 4px);
+    text-decoration: none;
+    transition: $transition-base;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: $color-white;
+        transform: scale(1.01);
+    }
+}
+
+.kids-play__back {
+    display: inline-block;
+    font-size: $font-size-label;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+
+    &:hover {
+        color: $color-black;
+    }
+}

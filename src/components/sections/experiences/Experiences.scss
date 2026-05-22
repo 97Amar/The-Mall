@@ -1,0 +1,161 @@
+@use '../../../assets/theme/variables' as *;
+
+// ── Experiences Section ──
+.experiences {
+    padding: 5rem 0;
+    background: $color-black;
+    overflow: hidden;
+
+    &__header {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+    }
+
+    &__label {
+        font-size: $font-size-label;
+        text-transform: uppercase;
+        letter-spacing: $tracking-xl;
+        color: $color-white-50;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    &__heading {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $color-white;
+        line-height: 1;
+        font-style: italic;
+        font-size: clamp(3rem, 7vw, 6rem);
+        letter-spacing: $tracking-tight;
+    }
+
+    &__desc {
+        color: $color-white-50;
+        max-width: 520px;
+        margin-left: auto;
+        font-size: $font-size-body-lg;
+        line-height: 1.9;
+    }
+
+    // ── Grid ──
+    &__grid {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    // ── Card ──
+    &__card {
+        position: relative;
+        overflow: hidden;
+        border-radius: $radius-2xl;
+        background: $color-dark;
+        transition: $transition-slow;
+
+        &--large {
+            height: 700px;
+        }
+
+        &--small {
+            height: 520px;
+        }
+
+        &--wide {
+            height: 520px;
+        }
+
+        &:hover .experiences__img {
+            transform: scale(1.08);
+        }
+    }
+
+    &__img-wrap {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $transition-image;
+    }
+
+    &__card-overlay {
+        position: absolute;
+        inset: 0;
+        background: $gradient-card-overlay;
+    }
+
+    // ── Card Content ──
+    &__card-body {
+        position: relative;
+        z-index: $z-content;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__card-badge {
+        font-size: $font-size-label;
+        letter-spacing: $tracking-md;
+        text-transform: uppercase;
+        color: $color-white-50;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+
+    &__card-title {
+        color: $color-white;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        line-height: 0.9;
+        font-style: italic;
+        letter-spacing: -0.04em;
+
+        &--wide {
+            font-size: 4rem;
+        }
+
+        &--normal {
+            font-size: 3rem;
+        }
+    }
+
+    &__card-desc {
+        color: $color-white-50;
+        margin-bottom: 1.5rem;
+        max-width: 650px;
+        font-size: $font-size-body;
+        line-height: 1.8;
+    }
+
+    // ── Button ──
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: $color-white;
+        color: $color-black;
+        border: none;
+        border-radius: $radius-pill;
+        padding: 18px 28px;
+        font-size: $font-size-label;
+        letter-spacing: 0.2em;
+        font-weight: 700;
+        width: fit-content;
+        cursor: pointer;
+        transition: $transition-base;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

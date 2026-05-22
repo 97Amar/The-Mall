@@ -1,0 +1,6 @@
+@forward '../../assets/theme/variables';
+@use '../../assets/theme/variables' as *;
+
+$restaurant-cream: #d5d1cc;
+$restaurant-bg: #000000;
+$restaurant-text-muted: rgba(213, 209, 204, 0.45);

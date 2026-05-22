@@ -1,0 +1,41 @@
+@use '../../theme' as *;
+
+.restaurant-heading {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 3rem 1.5rem 2rem;
+    max-width: 52rem;
+    margin: 0 auto;
+
+    &__codename {
+        font-size: $font-size-xs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-super;
+        color: $restaurant-text-muted;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    &__title {
+        font-family: $font-serif;
+        font-size: clamp(2.75rem, 10vw, 5.5rem);
+        font-weight: 400;
+        letter-spacing: $tracking-tight;
+        text-transform: uppercase;
+        margin: 0 0 1.25rem;
+        line-height: 0.95;
+        color: $restaurant-cream;
+    }
+
+    &__description {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        line-height: 1.7;
+        color: rgba(213, 209, 204, 0.75);
+        margin: 0 0 2rem;
+        max-width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

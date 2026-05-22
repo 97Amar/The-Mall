@@ -1,0 +1,195 @@
+@use '../../assets/theme/variables' as *;
+
+.common_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: $btn-padding-y $btn-padding-x;
+    border-radius: $btn-radius;
+    border: none;
+    outline: none;
+    background: $btn-primary-bg;
+    color: $btn-primary-color;
+    font-family: $font-sans;
+    font-size: $btn-font-size;
+    font-weight: $btn-font-weight;
+    letter-spacing: $btn-letter-spacing;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: $btn-primary-shadow;
+    transition: $transition-base;
+
+    &:hover {
+        transform: scale(1.05) translateY(-2px);
+        color: $btn-primary-color;
+        box-shadow: $btn-primary-shadow;
+    }
+
+    &:active {
+        transform: scale(1) translateY(0);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        transform: none;
+        box-shadow: none;
+    }
+
+    &.full {
+        width: 100%;
+    }
+
+    &_icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg,
+        img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+    }
+
+    // Black primary for light sections (Stay, Hospitality, detail pages)
+    &.primary-dark,
+    &.btn-dark {
+        background: $btn-primary-dark-bg;
+        color: $btn-primary-dark-color;
+        box-shadow: $btn-primary-dark-shadow;
+
+        &:hover {
+            background: $btn-primary-dark-hover-bg;
+            color: $btn-primary-dark-color;
+        }
+    }
+
+    // Cream CTA on dark backgrounds (Timeless restaurant reserve)
+    &.primary-cream {
+        background: #d5d1cc;
+        color: #1e1e1e;
+        box-shadow: none;
+        border-radius: 0;
+        min-width: $btn-min-width;
+        padding: 1rem 2.5rem;
+
+        &:hover {
+            background: #ebe7e2;
+            color: #1e1e1e;
+            transform: none;
+        }
+    }
+
+    // White outline pill on dark/image overlays
+    &.outline-white,
+    &.border-btn-white {
+        background: transparent;
+        border: 1px solid $color-white;
+        color: $color-white;
+        box-shadow: none;
+
+        &:hover {
+            background: $color-white;
+            color: $color-black;
+            transform: scale(1.05);
+        }
+    }
+
+    // Gold outline accent (VIP, secondary luxury CTA on dark)
+    &.border-btn,
+    &.outline {
+        background: transparent;
+        border: 1px solid $btn-outline-border;
+        color: $btn-outline-color;
+        box-shadow: none;
+
+        &:hover {
+            background: $btn-outline-hover-bg;
+            color: $btn-outline-color;
+            transform: scale(1.05) translateY(-2px);
+        }
+    }
+
+    // White outline on dark cards/media
+    &.outline-light {
+        background: transparent;
+        border: 2px solid $btn-outline-light-border;
+        color: $btn-outline-light-color;
+        box-shadow: none;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        letter-spacing: normal;
+        text-transform: none;
+        min-height: auto;
+        padding: 0.5rem;
+
+        &:hover {
+            background: $color-white;
+            color: $color-black;
+            transform: none;
+        }
+
+        &.full {
+            width: 100%;
+        }
+    }
+
+    // Glass ghost on dark backgrounds
+    &.ghost-btn,
+    &.secondarybtn {
+        background: $btn-ghost-bg;
+        border: 1px solid $btn-ghost-border;
+        color: $btn-ghost-color;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: none;
+
+        &:hover {
+            background: $btn-ghost-hover-bg;
+            color: $btn-ghost-color;
+            transform: scale(1.05) translateY(-2px);
+        }
+    }
+}
+
+.btn-loader {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+
+    span {
+        width: 3px;
+        height: 12px;
+        border-radius: 2px;
+        background-color: currentColor;
+        animation: btn-loading-bars 0.8s infinite ease-in-out;
+
+        &:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+    }
+}
+
+@keyframes btn-loading-bars {
+
+    0%,
+    80%,
+    100% {
+        transform: scaleY(0.4);
+        opacity: 0.5;
+    }
+
+    40% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}

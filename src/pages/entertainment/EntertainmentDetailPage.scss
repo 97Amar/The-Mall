@@ -1,0 +1,288 @@
+@use '../../assets/theme/variables' as *;
+
+// ── Entertainment Detail Page ──
+.detail-page {
+    background: $color-white;
+    min-height: 100vh;
+
+    // ── Hero ──
+    &__hero {
+        position: relative;
+        height: 70vh;
+        overflow: hidden;
+    }
+
+    &__hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, $color-black-80, transparent, $color-black-20);
+        opacity: 0.75;
+    }
+
+    &__hero-meta {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 2rem 4rem;
+    }
+
+    &__hero-category {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-super;
+        color: $color-white-50;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    &__hero-title {
+        font-family: $font-serif;
+        font-style: italic;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: $tracking-tight;
+        color: $color-white;
+        margin-bottom: 0.5rem;
+    }
+
+    &__hero-tagline {
+        font-size: 1.25rem;
+        color: $color-white-75;
+        font-weight: 300;
+    }
+
+    &__back-btn {
+        position: absolute;
+        top: 6rem;
+        left: 1.5rem;
+    }
+
+    &__back-link {
+        background: $color-white-10;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid $color-white-20;
+        color: $color-white;
+        border-radius: $radius-pill;
+        padding: 0.5rem 1.5rem;
+        font-size: $font-size-xxs;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: $transition-base;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+
+    // ── Body ──
+    &__body {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+    }
+
+    &__section-label {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-super;
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        font-size: 1.25rem;
+        color: rgba(0, 0, 0, 0.6);
+        line-height: 1.8;
+        margin-bottom: 3rem;
+    }
+
+    &__divider {
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 3rem;
+    }
+
+    &__details {
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 1.8;
+        margin-bottom: 3rem;
+    }
+
+    // ── Gallery ──
+    &__gallery-item-primary {
+        height: 420px;
+    }
+
+    &__gallery-item-secondary {
+        height: 280px;
+    }
+
+    &__gallery-wrap {
+        border-radius: $radius-xl;
+        overflow: hidden;
+        box-shadow: 0 4px 12px $color-black-08;
+    }
+
+    &__gallery-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    // ── Highlights ──
+    &__feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.25rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: $radius-xl;
+        background: rgba(249, 249, 249, 0.5);
+        height: 100%;
+    }
+
+    &__feature-dot {
+        width: 6px;
+        height: 6px;
+        background: $color-black;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    &__feature-text {
+        font-size: $font-size-xxs;
+        font-weight: 700;
+        color: $color-black;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+    }
+
+    // ── Info Card ──
+    &__info-card {
+        background: $color-white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: $radius-2xl;
+        padding: 2rem;
+        box-shadow: 0 2px 8px $color-black-08;
+    }
+
+    &__info-label {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__info-row {
+        margin-bottom: 1.25rem;
+    }
+
+    &__info-row-label {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+
+    &__info-row-value {
+        font-size: 1rem;
+        font-weight: 900;
+        color: $color-black;
+        margin: 0;
+    }
+
+    &__info-divider {
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 1.25rem 0;
+    }
+
+    &__book-btn {
+        width: 100%;
+        background: $color-black;
+        color: $color-white;
+        border: none;
+        border-radius: $radius-pill;
+        padding: 0.75rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: $font-size-xxs;
+        letter-spacing: $tracking-sm;
+        box-shadow: 0 10px 20px $color-black-20;
+        cursor: pointer;
+        margin-bottom: 0.75rem;
+        transition: $transition-base;
+
+        &:hover {
+            background: $color-dark;
+        }
+    }
+
+    &__back-all-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        border: 1px solid $color-black;
+        color: $color-black;
+        background: transparent;
+        border-radius: $radius-pill;
+        padding: 0.75rem;
+        font-size: $font-size-xxs;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        text-decoration: none;
+        transition: $transition-base;
+
+        &:hover {
+            background: $color-black;
+            color: $color-white;
+        }
+    }
+
+    // ── 404 ──
+    &__not-found {
+        background: $color-white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__not-found-code {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 900;
+        color: $color-black;
+    }
+
+    &__not-found-text {
+        color: rgba(0, 0, 0, 0.4);
+        margin-bottom: 3rem;
+    }
+}

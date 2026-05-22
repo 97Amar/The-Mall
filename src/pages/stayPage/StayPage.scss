@@ -1,0 +1,439 @@
+@use '../../assets/theme/variables' as *;
+
+// ── Stay Page ──
+.stay-page {
+    background: $color-white;
+    color: $color-black;
+
+    // ── Hero ──
+    &__hero {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: $z-bg;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__hero-overlay-white {
+        position: absolute;
+        inset: 0;
+        background: $color-white;
+        opacity: 0.25;
+    }
+
+    &__hero-overlay-gradient {
+        position: absolute;
+        inset: 0;
+        background: $gradient-overlay-light;
+    }
+
+    &__hero-content {
+        position: relative;
+        z-index: $z-content;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 6rem 1.5rem 0;
+    }
+
+    &__hero-eyebrow {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-super;
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    &__hero-title {
+        font-size: 2rem;
+        font-weight: 900;
+        letter-spacing: $tracking-tight;
+        font-family: $font-serif;
+        margin-bottom: 0.25rem;
+        color: $color-black;
+    }
+
+    &__hero-location {
+        color: rgba(0, 0, 0, 0.4);
+        font-size: $font-size-xxs;
+        margin-bottom: 0.75rem;
+    }
+
+    &__hero-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    &__hero-link {
+        font-size: $font-size-xxs;
+        color: $color-black;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        transition: $transition-base;
+
+        &:hover {
+            color: $color-black;
+        }
+    }
+
+    // ── Booking Bar ──
+    &__booking-bar {
+        width: 100%;
+        margin-top: auto;
+    }
+
+    &__booking-grid {
+        width: 100%;
+        background: $color-white;
+        box-shadow: 0 10px 40px $color-black-20;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__booking-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.25rem 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        @media (min-width: 768px) {
+            border-bottom: none;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__field-label {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.4);
+        margin-bottom: 0.25rem;
+    }
+
+    &__date-row {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    &__date-sep {
+        opacity: 0.25;
+    }
+
+    &__date-input,
+    &__guest-select,
+    &__promo-input {
+        background: transparent;
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: $color-black;
+        border: none;
+        outline: none;
+        width: 100%;
+        cursor: pointer;
+        appearance: none;
+
+        &::placeholder {
+            opacity: 0.5;
+        }
+    }
+
+    &__booking-btn {
+        background: $color-black;
+        color: $color-white;
+        border: none;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        padding: 1.25rem 1rem;
+        font-size: $font-size-xxs;
+        cursor: pointer;
+        transition: $transition-base;
+
+        &:hover {
+            background: $color-dark;
+        }
+    }
+
+    // ── Offer Section ──
+    &__offer {
+        padding: 5rem 1.5rem;
+        background: $color-white;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &__offer-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    &__offer-eyebrow {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    &__offer-title {
+        font-family: $font-serif;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 900;
+        letter-spacing: $tracking-tight;
+        color: $color-black;
+        margin-bottom: 1rem;
+    }
+
+    &__offer-desc {
+        color: rgba(0, 0, 0, 0.6);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        max-width: 32rem;
+    }
+
+    &__offer-btn {
+        display: inline-block;
+        background: $color-black;
+        color: $color-white;
+        border: none;
+        border-radius: $radius-pill;
+        padding: 0.75rem 2rem;
+        font-size: $font-size-xxs;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        text-decoration: none;
+        box-shadow: 0 10px 30px $color-black-25;
+        transition: $transition-base;
+
+        &:hover {
+            transform: scale(1.05);
+            color: $color-white;
+        }
+    }
+
+    &__offer-img-wrap {
+        border-radius: $radius-xl;
+        overflow: hidden;
+        box-shadow: 0 10px 40px $color-black-20;
+        transition: $transition-slow;
+
+        &:hover {
+            box-shadow: 0 25px 50px $color-black-25;
+        }
+    }
+
+    &__offer-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    // ── Accommodations Section ──
+    &__rooms {
+        padding: 5rem 0;
+        background: $color-white;
+    }
+
+    &__rooms-header {
+        text-align: center;
+        padding: 1rem 1.5rem 3rem;
+    }
+
+    &__rooms-label {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    &__rooms-title {
+        font-family: $font-serif;
+        font-style: italic;
+        font-size: 2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: $tracking-tight;
+        color: $color-black;
+        margin-bottom: 0;
+    }
+
+    &__banner {
+        position: relative;
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        overflow: hidden;
+        height: 620px;
+    }
+
+    &__banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__banner-fade {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: $gradient-banner-bottom;
+    }
+
+    &__banner-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 1rem;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
+    &__banner-label {
+        color: $color-white-75;
+        font-size: $font-size-xxs;
+        font-weight: 700;
+        letter-spacing: $tracking-sm;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+    }
+
+    &__banner-title {
+        color: $color-white;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 700;
+        font-family: $font-serif;
+        margin: 0;
+    }
+
+    &__banner-btn {
+        display: inline-block;
+        border: 1px solid $color-white;
+        color: $color-white;
+        background: transparent;
+        padding: 0.75rem 2rem;
+        font-size: $font-size-xs;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        text-decoration: none;
+        transition: $transition-base;
+        white-space: nowrap;
+
+        &:hover {
+            transform: scale(1.05);
+            color: $color-white;
+        }
+    }
+
+    // ── Dining Section ──
+    &__dining {
+        padding: 5rem 1.5rem;
+        background: $color-white;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &__dining-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    &__dining-img {
+        width: 100%;
+        border-radius: $radius-xl;
+        object-fit: cover;
+        height: 300px;
+        box-shadow: 0 4px 12px $color-black-08;
+    }
+
+    &__dining-img-offset {
+        margin-top: 2rem;
+    }
+
+    &__dining-eyebrow {
+        font-size: $font-size-xxs;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        color: rgba(0, 0, 0, 0.3);
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__dining-title {
+        font-family: $font-serif;
+        font-style: italic;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: $tracking-tight;
+        color: $color-black;
+        margin-bottom: 1rem;
+    }
+
+    &__dining-desc {
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        max-width: 32rem;
+    }
+
+    &__dining-btn {
+        background: $color-black;
+        color: $color-white;
+        border: none;
+        border-radius: $radius-pill;
+        padding: 0.75rem 2rem;
+        font-size: $font-size-xxs;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: $tracking-sm;
+        box-shadow: 0 10px 30px $color-black-25;
+        cursor: pointer;
+        transition: $transition-base;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
