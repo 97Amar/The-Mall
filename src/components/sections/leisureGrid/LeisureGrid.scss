@@ -7,7 +7,11 @@
     overflow: hidden;
 
     &__header {
-        padding: 0 1.5rem 4rem;
+        padding: 0 1rem 2.5rem;
+
+        @media (min-width: 768px) {
+            padding: 0 1.5rem 4rem;
+        }
     }
 
     &__label {
@@ -30,7 +34,11 @@
     }
 
     &__cards {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
+
+        @media (min-width: 768px) {
+            padding: 0 1.5rem;
+        }
     }
 
     // ── Card ──
@@ -38,9 +46,17 @@
         position: relative;
         overflow: hidden;
         border-radius: $radius-2xl;
-        height: 760px;
+        height: clamp(22rem, 68vh, 28rem);
         background: $color-dark;
         transition: $transition-slow;
+
+        @media (min-width: 768px) {
+            height: 600px;
+        }
+
+        @media (min-width: 992px) {
+            height: 760px;
+        }
     }
 
     &__card-overlay {
@@ -96,7 +112,7 @@
         font-weight: 900;
         text-transform: uppercase;
         margin-bottom: 0.75rem;
-        font-size: 2.5rem;
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
         line-height: 0.9;
         font-style: italic;
     }
