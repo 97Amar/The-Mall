@@ -1,11 +1,10 @@
-import { useRef, useState } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Navigation } from 'swiper/modules'
+import { useRef } from 'react'
 import type { Swiper as SwiperType } from 'swiper'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { FreeMode, Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { nickAssets, todaySliderCards } from '../childrenPlayData'
-import TodayInfoCard from './TodayInfoCard'
 import TodayAppearanceCard from './TodayAppearanceCard'
+import TodayInfoCard from './TodayInfoCard'
 
 function formatTodayDate() {
     return new Date().toLocaleDateString('en-US', {
