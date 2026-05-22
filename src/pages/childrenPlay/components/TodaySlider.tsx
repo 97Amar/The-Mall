@@ -21,7 +21,6 @@ export default function TodaySlider() {
     const [swiper, setSwiper] = useState<SwiperType | null>(null)
 
     const bindNav = (instance: SwiperType) => {
-        setSwiper(instance)
         if (!prevRef.current || !nextRef.current) return
         if (typeof instance.params.navigation === 'object') {
             instance.params.navigation.prevEl = prevRef.current
