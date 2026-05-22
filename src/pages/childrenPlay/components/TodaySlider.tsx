@@ -18,10 +18,8 @@ function formatTodayDate() {
 export default function TodaySlider() {
     const prevRef = useRef<HTMLButtonElement>(null)
     const nextRef = useRef<HTMLButtonElement>(null)
-    const [swiper, setSwiper] = useState<SwiperType | null>(null)
 
     const bindNav = (instance: SwiperType) => {
-        setSwiper(instance)
         if (!prevRef.current || !nextRef.current) return
         if (typeof instance.params.navigation === 'object') {
             instance.params.navigation.prevEl = prevRef.current
