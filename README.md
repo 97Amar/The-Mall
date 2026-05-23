@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Mall Screening — The Mall
 
 A multi-page **static mall experience** built as a front-end screening project. The site presents a luxury lifestyle destination with themed sections for hospitality, entertainment, dining, children’s play, fashion, and events. All pages are client-rendered; there is no backend API.
@@ -20,6 +19,17 @@ The fashion and product experiences are intentionally **non-transactional**: car
 | Motion | Framer Motion (`Motion.tsx` wrappers), GSAP, Lenis |
 | UI | Swiper, React Bootstrap, Lucide React |
 | Media | `MediaImage`, `BackgroundVideo` with CDN fallbacks |
+
+## Development environment & AI tools
+
+This project was built and refined using AI-assisted coding environments alongside standard front-end tooling.
+
+| Tool | Role in this project |
+|------|----------------------|
+| **[Cursor IDE](https://cursor.com)** | Primary code editor — component scaffolding, refactors, responsive fixes, documentation, and debugging with integrated AI assistance |
+| **[Antigravity IDE](https://antigravity.google)** | Secondary AI-assisted IDE used for exploration, implementation support, and iterative UI work |
+
+All application logic, routing, styling, and static data remain in this repository. AI tools were used to accelerate development and documentation; **review, integration, and final structure are maintained in source control**. The app is still **UI-only** (no backend or API) regardless of how the code was authored.
 
 ## Getting started
 
@@ -142,7 +152,6 @@ Production build emits to `dist/` and is suitable for static hosting (Netlify, V
 ## License
 
 Private screening / assessment project (`"private": true` in `package.json`). Add license terms here if the repository is published.
-=======
-# The-Mall
-Luxury multi-page mall experience built with React, Vite, and TypeScript featuring immersive static UI sections.
->>>>>>> 3def1da377bc1c2e6ddbe4f0012a1979cf523aad
+
+For formal project submission, see **[PROJECT_REPORT.md](./PROJECT_REPORT.md)**.  
+For a short summary, see **[PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md)**.
