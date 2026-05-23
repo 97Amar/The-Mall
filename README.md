@@ -149,9 +149,4 @@ mall-screening/
 
 Production build emits to `dist/` and is suitable for static hosting (Netlify, Vercel, Azure Static Web Apps, S3, etc.). No server-side rendering is required.
 
-## License
 
-Private screening / assessment project (`"private": true` in `package.json`). Add license terms here if the repository is published.
-
-For formal project submission, see **[PROJECT_REPORT.md](./PROJECT_REPORT.md)**.  
-For a short summary, see **[PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md)**.
